@@ -43,10 +43,7 @@ end
 
 def get_average_age_for_season(data, season)
   ladies_ages = []
-  data[season].each {|person_inf| 
-     ladies_ages << person_inf['age']
-  }
-  #binding.pry
+  data[season].each {|person_inf| ladies_ages << person_inf['age']}
   ladies_ages_int = ladies_ages.map {|i| i.to_f}
   average = ladies_ages_int.inject(&:+)/ladies_ages_int.length
   average.round
